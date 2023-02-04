@@ -12,7 +12,7 @@ Application will load the projectList saved in your local computer.
 3. To add a to-do item in a project, click the '+' icon on the top right of the project.
     - If another todo item is expanded, it will automatically close and focus on the "form" for the new to do item
     - If you press 'Cancel', the todo item will be removed and doesn't affect the current projectList
-    - If you press 'Add ToDo', the todo item will be added to the projecList and the simplified version will show
+    - If you press 'Add ToDo', the todo item will be added to the projectList and the simplified version will show
         - Note: You need to enter something in the Title, Description, Priority and Date inputs to add the new todo successfully    
 4. To view a to-do item in a project, click the title of the todo item you want to view.
     - If another todo item is expanded, it will automatically close and focus on the todo item you have clicked
