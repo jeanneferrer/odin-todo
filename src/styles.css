@@ -456,6 +456,12 @@ header span {
         width: 90%;
     }
 
+    .new-todo-form textarea,
+    .todo-collapsed textarea:disabled,
+    .todo-collapsed textarea {
+        width: 90%;
+    }
+
     .new-todo-form > div:nth-of-type(2) > div:not(:first-of-type):not(:last-of-type),
     .todo-details-div > div:not(:first-of-type):not(:last-of-type) {
         flex-direction: column;
@@ -465,6 +471,11 @@ header span {
     .new-todo-form label,
     .todo-details-div label {
         text-align: left;
+    }
+
+    .new-todo-form .error-span:not(.todo-form-title-input),
+    .todo-details-div .error-span:not(.todo-title-span) {
+        margin-left: 0;
     }
 
     .todo-header,

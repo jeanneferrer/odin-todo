@@ -129,6 +129,9 @@ function displayToDo(projectList, project, toDoItem) {
     const toDoDescriptionLabel = document.createElement("label");
     toDoDescriptionLabel.setAttribute('for', 'todo-description-input');
     toDoDescriptionLabel.textContent = "Description:";
+    const descriptionAsterisk = document.createElement("sup");
+    descriptionAsterisk.textContent = "*";
+    toDoDescriptionLabel.appendChild(descriptionAsterisk);
     const toDoDescription = document.createElement("input");
     toDoDescription.setAttribute('type', 'text');
     toDoDescription.setAttribute('value', toDoItem.description);
@@ -150,7 +153,10 @@ function displayToDo(projectList, project, toDoItem) {
     const toDoPriorityDiv = document.createElement("div"); // priority
     const toDoPriorityLabel = document.createElement("label");
     toDoPriorityLabel.setAttribute('for', 'todo-priority-input');
-    toDoPriorityLabel.textContent = "Priority";
+    toDoPriorityLabel.textContent = "Priority:";
+    const priorityAsterisk = document.createElement("sup");
+    priorityAsterisk.textContent = "*";
+    toDoPriorityLabel.appendChild(priorityAsterisk);
     const toDoPriority = document.createElement("select");
     toDoPriority.setAttribute('name', 'todo-priority-input');
     const priorityOptions = ["Low", "Medium", "High"];
@@ -166,7 +172,10 @@ function displayToDo(projectList, project, toDoItem) {
     const toDoDueDateDiv = document.createElement("div"); // due date
     const toDoDueDateLabel = document.createElement("label");
     toDoDueDateLabel.setAttribute('for', 'todo-due-date-input');
-    toDoDueDateLabel.textContent = "Due Date";
+    toDoDueDateLabel.textContent = "Due Date:";
+    const dueDateAsterisk = document.createElement("sup");
+    dueDateAsterisk.textContent = "*";
+    toDoDueDateLabel.appendChild(dueDateAsterisk);
     const toDoDueDate = document.createElement("input");
     toDoDueDate.setAttribute('type', 'date');
     toDoDueDate.setAttribute('name', 'todo-due-date-input');
@@ -184,7 +193,7 @@ function displayToDo(projectList, project, toDoItem) {
     const toDoTimeDiv = document.createElement("div"); // time
     const toDoTimeLabel = document.createElement("label");
     toDoTimeLabel.setAttribute('for', 'todo-time-input');
-    toDoTimeLabel.textContent = "Time";
+    toDoTimeLabel.textContent = "Time:";
     const toDoTime = document.createElement("input");
     toDoTime.setAttribute('type', 'time');
     toDoTime.setAttribute('name', 'todo-time-input');
@@ -195,7 +204,7 @@ function displayToDo(projectList, project, toDoItem) {
     toDoNotesDiv.setAttribute('class', 'todo-notes-div');
     const toDoNotesLabel = document.createElement("label");
     toDoNotesLabel.setAttribute('for', 'todo-notes-input');
-    toDoNotesLabel.textContent = "Notes";
+    toDoNotesLabel.textContent = "Notes:";
     const toDoNotes = document.createElement("textarea");
     toDoNotes.setAttribute('name', 'todo-notes-input');
     toDoNotes.textContent = toDoItem.notes;
@@ -254,10 +263,9 @@ function displayToDo(projectList, project, toDoItem) {
         toDoDueDate.value = toDoItem.dueDate;
         toDoTime.value = toDoItem.dueTime;
         toDoNotes.value = toDoItem.notes;
-        toDoCollapsed.querySelectorAll('.error-span').forEach(span => {
-            span.textContent = "";
-            span.style.display = "none";
-        });
+        toDoTitleSpan.style.display = "none";
+        toDoDescriptionSpan.style.display = "none";
+        toDoDueDateSpan.style.display = "none";
         toDoCollapsed.querySelectorAll('input, select, textarea').forEach(input => {
             input.setAttribute('disabled', '');
         });
@@ -312,6 +320,9 @@ function displayToDo(projectList, project, toDoItem) {
             toDoItem.dueTime = toDoTime.value;
             toDoItem.notes = toDoNotes.value;
             saveLocalProjectList(projectList);
+            toDoTitleSpan.style.display = "none";
+            toDoDescriptionSpan.style.display = "none";
+            toDoDueDateSpan.style.display = "none";
             toDoCollapsed.querySelectorAll('input, select, textarea').forEach(input => {
                 input.setAttribute('disabled', '');
             });
