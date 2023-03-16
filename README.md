@@ -1,4 +1,6 @@
 # Odin To-Do App
+View live site: https://adiferrer.github.io/odin-todo/
+
 ## Instructions
 Application will load the projectList saved in your local computer.
 1. To add a project, click the '+' icon button on the top right of the screen.
