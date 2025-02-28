@@ -1,5 +1,5 @@
 # Odin To-Do App
-View live site: https://adiferrer.github.io/odin-todo/
+View live site: https://jeanneferrer.github.io/odin-todo/
 
 ## Instructions
 Application will load the projectList saved in your local computer.
